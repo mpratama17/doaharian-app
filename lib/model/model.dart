@@ -1,26 +1,3 @@
-// class Content {
-//   final String content;
-//   final String id;
-//   final String title;
-//   final String detail;
-
-//   const Content({
-//     required this.content,
-//     required this.id,
-//     required this.title,
-//     required this.detail,
-//   });
-
-//   factory Content.fromJson(Map<String, dynamic> json) {
-//     return Content(
-//       content: json['content'],
-//       id: json['id'],
-//       title: json['title'],
-//       detail: json['detail'],
-//     );
-//   }
-// }
-
 class Doa {
   String? id;
   String? doa;
