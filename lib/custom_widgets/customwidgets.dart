@@ -32,9 +32,7 @@ Container SignInSignUpButton(
       child: Text(
         isLogin ? 'Sign In' : 'Sign Up',
         style: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-        ),
+            fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
       ),
     ),
   );
