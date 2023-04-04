@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-import 'model.dart';
+import 'model/model.dart';
 
 class Repository {
   final _baseUrl = "https://doa-doa-api-ahmadramadhan.fly.dev/api";
