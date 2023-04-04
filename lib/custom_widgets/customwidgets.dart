@@ -30,7 +30,7 @@ Container SignInSignUpButton(
         onTap();
       },
       child: Text(
-        isLogin ? 'Sign In' : 'Sign Up',
+        isLogin ? 'Login' : 'Sign Up',
         style: TextStyle(
             fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
       ),
