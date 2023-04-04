@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:tes/custom_widgets/customwidgets.dart';
+import 'package:tes/custom_widgets/navigation_bar.dart';
 import 'package:tes/view/home.dart';
+import 'package:tes/view/signup.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 400,
+                  height: 200,
                 ),
                 reusableTextfield("email", Icons.abc, false, _emailController),
                 SizedBox(height: 16),
@@ -40,12 +42,33 @@ class _LoginScreenState extends State<LoginScreen> {
                       .then((value) {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Home()),
+                      MaterialPageRoute(builder: (context) => NavBar()),
                     );
                   }).onError((error, stackTrace) {
                     SnackBar(content: Text("Password or Email is wrong"));
                   });
-                })
+                }),
+                //create link to sign up
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Dont Have account? "),
+                    InkWell(
+                      child: Text(
+                        "Sign Up",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      onTap: () {
+                        //navigate to signup
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SignUpScreen()),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
