@@ -44,6 +44,24 @@ class _LoginScreenState extends State<LoginScreen> {
                       context,
                       MaterialPageRoute(builder: (context) => NavBar()),
                     );
+                    if (_emailController == false) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Login Gagal"),
+                        ),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text("Login Sukses"),
+                        ),
+                      );
+                    }
+                    // ScaffoldMessenger.of(context).showSnackBar(
+                    //   SnackBar(
+                    //     content: Text("Login Sukses"),
+                    //   ),
+                    // );
                   }).onError((error, stackTrace) {
                     SnackBar(content: Text("Password or Email is wrong"));
                   });
