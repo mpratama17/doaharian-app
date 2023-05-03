@@ -51,6 +51,7 @@ android {
         // minSdkVersion flutter.minSdkVersion
         minSdkVersion 21
         targetSdkVersion 30
+        multiDexEnabled true
         // targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -71,5 +72,6 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:multidex:1.0.3'
 }
 // id 'com.google.gms.google-services'
