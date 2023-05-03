@@ -18,8 +18,11 @@ class _HomeState extends State<Home> {
 
   Repository repository = Repository();
 
+  bool errorLogin = false;
+
   getData() async {
     listdoa = await repository.getData();
+    if (listdoa == null) errorLogin = true;
     setState(() {});
   }
 
@@ -33,37 +36,67 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: ListView.separated(
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Detail(item: listdoa[index]),
-                    ),
-                  );
-                },
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Text(listdoa[index].id.toString()),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(listdoa[index].doa.toString()),
-                      ],
-                    ),
+        child: ListView.custom(childrenDelegate: SliverChildBuilderDelegate(
+          (context, index) {
+            return InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Detail(item: listdoa[index]),
+                  ),
+                );
+              },
+              child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    children: [
+                      Text(listdoa[index].id.toString()),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(listdoa[index].doa.toString()),
+                    ],
                   ),
                 ),
-              );
-            },
-            separatorBuilder: (context, index) {
-              return Divider();
-            },
-            itemCount: listdoa.length),
+              ),
+              
+            );
+          },
+          childCount: listdoa.length,
+        ))
+        // ListView.separated(
+        //     itemBuilder: (context, index) {
+        //       return InkWell(
+        //         onTap: () {
+        //           Navigator.push(
+        //             context,
+        //             MaterialPageRoute(
+        //               builder: (context) => Detail(item: listdoa[index]),
+        //             ),
+        //           );
+        //         },
+        //         child: Container(
+        //           child: Padding(
+        //             padding: const EdgeInsets.all(8.0),
+        //             child: Row(
+        //               children: [
+        //                 Text(listdoa[index].id.toString()),
+        //                 SizedBox(
+        //                   width: 10,
+        //                 ),
+        //                 Text(listdoa[index].doa.toString()),
+        //               ],
+        //             ),
+        //           ),
+        //         ),
+        //       );
+        //     },
+        //     separatorBuilder: (context, index) {
+        //       return Divider();
+        //     },
+        //     itemCount: listdoa.length),
       ),
     );
   }

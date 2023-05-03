@@ -26,9 +26,9 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
-                SizedBox(
-                  height: 200,
-                ),
+                // SizedBox(
+                //   height: 200,
+                // ),
                 reusableTextfield("email", Icons.abc, false, _emailController),
                 SizedBox(height: 16),
                 reusableTextfield(
@@ -53,15 +53,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
+                          backgroundColor: Colors.green,
                           content: Text("Login Sukses"),
                         ),
                       );
                     }
-                    // ScaffoldMessenger.of(context).showSnackBar(
-                    //   SnackBar(
-                    //     content: Text("Login Sukses"),
-                    //   ),
-                    // );
                   }).onError((error, stackTrace) {
                     SnackBar(content: Text("Password or Email is wrong"));
                   });
