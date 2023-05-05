@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tes/custom_widgets/navigation_bar.dart';
+import 'package:tes/view/detail.dart';
 import 'package:tes/view/detail_baru.dart';
 import 'package:tes/view/login.dart';
 import 'package:tes/view/signup.dart';
