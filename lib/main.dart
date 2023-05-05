@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.cyan,
         fontFamily: GoogleFonts.poppins().fontFamily,
       ),
-      home: Home(),
+      home: LoginScreen(),
     );
   }
 }
