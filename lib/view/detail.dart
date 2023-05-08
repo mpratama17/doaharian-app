@@ -21,11 +21,17 @@ class _DetailState extends State<Detail> {
       appBar: AppBar(
         title: Text(widget.item.doa!),
       ),
-      body: Column(
+      body: Padding(padding: EdgeInsets.all(16), 
+      child: Column(
         children: [
-          Text(widget.item.ayat!),
-          Text(widget.item.artinya!),
+          SizedBox(height: 16),
+          Text(widget.item.ayat!,
+          textAlign: TextAlign.end,
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+          SizedBox(height: 12),
+          Text(widget.item.artinya!, textAlign: TextAlign.justify,),
         ],
+      ),
       ),
     );
   }
