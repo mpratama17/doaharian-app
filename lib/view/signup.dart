@@ -27,6 +27,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
+                SizedBox(
+                  height: 150,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text("Doa\nHarian",
+                      style: TextStyle(
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green)),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
                 reusableTextfield("email", Icons.abc, false, _emailController),
                 SizedBox(height: 16),
                 reusableTextfield(
