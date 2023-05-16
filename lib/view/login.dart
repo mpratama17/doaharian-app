@@ -1,10 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:tes/custom_widgets/customwidgets.dart';
 import 'package:tes/custom_widgets/navigation_bar.dart';
-import 'package:tes/view/home.dart';
 import 'package:tes/view/signup.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -15,8 +13,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +25,18 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 200,
+                  height: 150,
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text("Doa\nHarian",
+                      style: TextStyle(
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green)),
+                ),
+                SizedBox(
+                  height: 25,
                 ),
                 reusableTextfield("email", Icons.abc, false, _emailController),
                 SizedBox(height: 16),
@@ -53,6 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
+                          backgroundColor: Colors.green,
                           content: Text("Login Sukses"),
                         ),
                       );
