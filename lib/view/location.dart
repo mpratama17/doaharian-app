@@ -38,13 +38,12 @@ class _LocState extends State<Loc> {
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Center(child: Text(locationMessage)),
-            SizedBox(height: 20),
-            Text("Get user location"),
+            SizedBox(height: 12),
             ElevatedButton(
               onPressed: () {
                 getCurrentLocation();
               },
-              child: Text("Get location"),
+              child: Text("Get lat & long"),
             ),
           ],
         )),
